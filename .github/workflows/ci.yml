@@ -21,7 +21,158 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+
       - name: Install package
         run: python -m pip install -e .
+
       - name: Verify bounded public release
         run: python tools/verify_public_release.py
+
+      - name: Smoke-test complete public command surface
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          rm -rf outputs/ci
+          mkdir -p outputs/ci
+
+          command -v ecl-closure-audit
+          command -v ecl-native-ledger
+          command -v ecl-prtp-demo
+
+          ecl-closure-audit --help >/dev/null
+          ecl-native-ledger --help >/dev/null
+          ecl-prtp-demo --help >/dev/null
+
+          ecl-closure-audit \
+            --fixture exact \
+            --output outputs/ci/closure-exact.json \
+            > outputs/ci/closure-exact.log
+
+          ecl-closure-audit \
+            --fixture bounded \
+            --output outputs/ci/closure-bounded.json \
+            > outputs/ci/closure-bounded.log
+
+          ecl-closure-audit \
+            --fixture bounded \
+            --output outputs/ci/closure-bounded-repeat.json \
+            > outputs/ci/closure-bounded-repeat.log
+
+          set +e
+          ecl-closure-audit \
+            --fixture rupture \
+            --output outputs/ci/closure-rupture.json \
+            > outputs/ci/closure-rupture.log 2>&1
+          rupture_code=$?
+
+          ecl-closure-audit \
+            --fixture orientation \
+            --output outputs/ci/closure-orientation.json \
+            > outputs/ci/closure-orientation.log 2>&1
+          orientation_code=$?
+          set -e
+
+          test "$rupture_code" -eq 2
+          test "$orientation_code" -eq 2
+
+          ecl-native-ledger \
+            --events 64 \
+            --seed 117 \
+            --out-dir outputs/ci/native-ledger \
+            > outputs/ci/native-ledger.log
+
+          ecl-native-ledger \
+            --events 64 \
+            --seed 117 \
+            --out-dir outputs/ci/native-ledger-repeat \
+            > outputs/ci/native-ledger-repeat.log
+
+          ecl-prtp-demo \
+            --output outputs/ci/prtp-default.json \
+            > outputs/ci/prtp-default.log
+
+          ecl-prtp-demo \
+            --output outputs/ci/prtp-default-repeat.json \
+            > outputs/ci/prtp-default-repeat.log
+
+          ecl-prtp-demo \
+            --exact \
+            --closure-tolerance 0 \
+            --output outputs/ci/prtp-exact.json \
+            > outputs/ci/prtp-exact.log
+
+          ecl-prtp-demo \
+            --closure-tolerance 0 \
+            --output outputs/ci/prtp-zero-tolerance.json \
+            > outputs/ci/prtp-zero-tolerance.log
+
+          python examples/run_closure_audit.py \
+            > outputs/ci/example-closure.json
+          python examples/run_native_ledger.py \
+            > outputs/ci/example-native-ledger.txt
+          python examples/run_prtp_demo.py \
+            > outputs/ci/example-prtp.json
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path("outputs/ci")
+
+          def load(path: str):
+              return json.loads((root / path).read_text(encoding="utf-8"))
+
+          exact = load("closure-exact.json")
+          bounded = load("closure-bounded.json")
+          bounded_repeat = load("closure-bounded-repeat.json")
+          rupture = load("closure-rupture.json")
+          orientation = load("closure-orientation.json")
+
+          assert exact["classification"] == "COMMIT"
+          assert exact["closure_before_commit"] is True
+          assert bounded["classification"] == "COMMIT"
+          assert bounded["closure_before_commit"] is True
+          assert rupture["classification"] == "REJECT"
+          assert rupture["closure_before_commit"] is False
+          assert orientation["classification"] == "REJECT"
+          assert orientation["closure_before_commit"] is False
+          assert bounded["certificate_hash"] == bounded_repeat["certificate_hash"]
+
+          for certificate in (exact, bounded, rupture, orientation):
+              assert len(certificate["certificate_hash"]) == 64
+              assert certificate["rule"] == "closure-before-commit"
+              assert set(certificate["component_pass"]) == {
+                  "max_normalized_defect",
+                  "rupture_supremum",
+                  "rupture_rms",
+                  "phase_lock_rms",
+                  "topology_mismatch",
+              }
+
+          native = load("native-ledger/report.json")
+          native_repeat = load("native-ledger-repeat/report.json")
+          assert native["certificate_hash"] == native_repeat["certificate_hash"]
+          assert len(native["certificate_hash"]) == 64
+          assert native["comparison"]["native_advantage"] is True
+
+          prtp_default = load("prtp-default.json")
+          prtp_default_repeat = load("prtp-default-repeat.json")
+          prtp_exact = load("prtp-exact.json")
+          prtp_zero = load("prtp-zero-tolerance.json")
+
+          assert prtp_default["certificate_hash"] == prtp_default_repeat["certificate_hash"]
+          assert prtp_default["native_pass"] is True
+          assert prtp_default["shadow_hash_match"] is False
+          assert prtp_exact["native_pass"] is True
+          assert prtp_exact["shadow_hash_match"] is True
+          assert prtp_zero["native_pass"] is False
+          assert prtp_zero["shadow_hash_match"] is False
+
+          example_closure = load("example-closure.json")
+          example_prtp = load("example-prtp.json")
+          assert example_closure["classification"] == "COMMIT"
+          assert example_prtp["native_pass"] is True
+
+          print("PUBLIC COMMAND SURFACE: PASS")
+          PY
