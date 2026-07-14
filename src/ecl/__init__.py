@@ -1,5 +1,16 @@
-"""Public ECL research-preview package."""
+"""ECL public research package."""
 
+from .closure_engine import (
+    ClosureCertificate,
+    ClosureErrorVector,
+    ClosureMetrics,
+    ClosureSample,
+    ClosureThresholds,
+    ComplexPoint,
+    certify,
+    compute_metrics,
+    unit_circle_trajectory,
+)
 from .native_ledger import NativeLedgerConfig, build_report, sha256_canonical
 from .prtp import (
     ECLPhase,
@@ -11,6 +22,15 @@ from .prtp import (
 )
 
 __all__ = [
+    "ClosureCertificate",
+    "ClosureErrorVector",
+    "ClosureMetrics",
+    "ClosureSample",
+    "ClosureThresholds",
+    "ComplexPoint",
+    "certify",
+    "compute_metrics",
+    "unit_circle_trajectory",
     "NativeLedgerConfig",
     "build_report",
     "sha256_canonical",
@@ -22,4 +42,4 @@ __all__ = [
     "certify_event",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
