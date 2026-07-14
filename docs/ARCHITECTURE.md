@@ -2,68 +2,62 @@
 
 ## 1. Purpose
 
-The public ECL preview provides two small, auditable prototypes:
+The advanced ECL public candidate contains three bounded prototypes:
 
-1. a deterministic comparison experiment for residue processing, and
-2. an event certificate that separates exact hash agreement from policy-defined transition closure.
+1. a closure-before-commit trajectory auditor;
+2. a deterministic residue-ledger comparison experiment; and
+3. a Root-Template-Phase event certificate with explicit closure tolerance.
 
-The code is intentionally dependency-free so that the model can be inspected without a framework hiding the arithmetic.
+The implementation is dependency-free so the declared arithmetic and decision rules remain directly inspectable.
 
-## 2. Core vocabulary
+## 2. Closure-before-commit path
 
-| Term | Public-model meaning |
-|---|---|
-| Root | Stable event identity and payload invariant |
-| Template | Permitted transition rule |
-| Phase | Context, timestamp, nonce, and optional memory state |
-| Seam | Boundary between expected and observed states |
-| Ledger | Recorded portion of residue after seam compensation |
-| Open residue | Residue remaining after compensation and ledgering |
-| `G_UGD` | `open_residue / raw_residue`, or zero when raw residue is zero |
+```text
+Expected trajectory
+        +
+Observed trajectory
+        |
+        v
+Pointwise closure defect
+        |
+        +--> normalized defect
+        +--> seam-rupture increments
+        +--> phase-lock residual
+        +--> winding mismatch
+        +--> orientation mismatch
+        |
+        v
+Five-component error vector
+        |
+        v
+COMMIT / HOLD / REJECT
+        |
+        v
+Canonical JSON certificate + SHA-256 fingerprint
+```
 
-These are repository-local definitions. They should not be silently substituted for established terms in physics, cryptography, or formal verification.
+The five-component vector combines winding and orientation diagnostics into a topology-mismatch component while preserving both underlying values separately in the certificate.
 
 ## 3. Native-ledger experiment
 
-`src/ecl/native_ledger.py` generates paired conditions from the same pseudorandom seed:
+The native-ledger module generates paired conditions from the same pseudorandom seed:
 
 ```text
 Root bits -> Template map -> Phase perturbation -> Observed state
 ```
 
-The `native_on` condition applies configurable compensation and ledger fractions. The `native_off` condition retains the raw perturbation. The report stores every event row, aggregate values, configuration, an interpretation note, and a SHA-256 certificate hash.
-
-The comparison is internal to this model. A positive result means the configured transformation behaved as defined; it does not establish superiority over external algorithms.
+The native-on condition applies configurable compensation and ledger fractions. The native-off condition retains raw perturbation. The comparison is internal to the declared model and does not establish superiority over external algorithms.
 
 ## 4. PRTP event certificate
 
-`src/ecl/prtp.py` constructs an expected transition hash from Root, Template, and Phase data. It then records:
-
-- exact hash agreement,
-- normalized hash-character distance,
-- seam compensation,
-- ledger memory,
-- open residue,
-- closure ratio, and
-- the explicit closure tolerance used to decide `native_pass`.
-
-A mismatch is never accepted merely because `G_UGD < 1`. Acceptance requires the remaining open residue to be at or below the explicit tolerance carried in the policy. This keeps the decision visible and testable.
+The PRTP module constructs an expected transition hash from Root, Template, and Phase data. It records exact hash agreement, normalized hash-character distance, seam compensation, ledger memory, open residue, closure ratio, and the explicit tolerance used for acceptance.
 
 ## 5. Certificate hashing
 
-Certificate hashes use SHA-256 over canonical JSON with sorted keys and compact separators. They provide deterministic content fingerprints. They are not digital signatures and do not establish authorship, trusted time, or legal priority without an external signing and timestamping system.
+Certificate hashes use SHA-256 over compact JSON with sorted keys. They provide deterministic content fingerprints. They are not digital signatures and do not establish authorship, trusted time, consensus, non-repudiation, or legal priority.
 
 ## 6. Trust boundaries
 
-The public preview does not include:
+The public candidate does not include key management, digital signatures, network consensus, hostile-input hardening, trusted timestamp authorities, private vault logic, complete patent-claim implementations, device fabrication details, or production safety assurance.
 
-- key management,
-- digital signatures,
-- network consensus,
-- adversarial validation,
-- tamper-resistant storage,
-- official timestamp authority integration,
-- private vault logic, or
-- patent-claim implementation details.
-
-Any production adaptation must define those boundaries independently and undergo security review.
+Any external adaptation must define those boundaries independently and undergo appropriate mathematical, scientific, security, engineering, and legal review.
