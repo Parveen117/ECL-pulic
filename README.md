@@ -1,38 +1,44 @@
-# ECL: Public Research Preview
+# ECL: Closure-Aware Event Certification Framework
 
-ECL is an experimental framework for deterministic event certification, append-only transition records, and residue-aware ledger prototypes.
+> **Release status:** advanced public-research candidate. Keep the repository private until the release checklist and legal/IP review are complete.
+>
+> **Rights boundary:** public visibility is intended for technical inspection, non-commercial evaluation, scholarly discussion, and citation. It grants no patent licence or unrestricted software rights. See `LICENSE`, `PATENT_NOTICE.md`, and `PUBLIC_RELEASE_BOUNDARY.md`.
 
-This repository is a **source-available research preview**. It presents a compact, reproducible public surface without publishing the private provisional vault, patent drafts, internal proof chains, credentials, device designs, financial systems, or unpublished implementation material.
+ECL is an experimental framework for deterministic event certification, closure-aware transition control, append-only records, and residue-aware ledger prototypes.
 
-## What is included
+The advanced public layer is governed by one rule:
 
-- A deterministic native-ledger simulation with reproducible certificate hashes.
-- A compact Root-Template-Phase (PRTP) event-certificate adapter.
-- Unit tests and continuous-integration checks.
-- Architecture and public-release scope notes.
+```text
+closure before commit
+```
 
-## Research status
+A transition is not marked commit-ready merely because a hash exists or an average error looks small. The closure engine separately checks normalized defect, seam rupture, phase locking, winding consistency, and orientation consistency before issuing a deterministic certificate.
 
-ECL is an exploratory model. Terms such as `Root`, `Template`, `Phase`, `Seam`, `Ledger`, and `G_UGD` are defined within this repository's model. Results produced by the code demonstrate the behavior of those definitions; they are not, by themselves, proof of a physical law, production-grade cryptographic security, legal timestamping, or independent scientific validation.
+## Advanced public components
+
+- **Closure engine:** five-component error vector with `COMMIT`, `HOLD`, and `REJECT` classifications.
+- **Topological diagnostics:** winding mismatch and orientation mismatch are measured separately.
+- **Native-ledger experiment:** deterministic paired comparison with canonical certificate hashes.
+- **PRTP event certificate:** Root-Template-Phase event adapter with an explicit closure tolerance.
+- **Machine-readable schema:** JSON Schema for closure certificates.
+- **Tests and CI:** deterministic, bounded, rupture, orientation, and winding fixtures.
+
+## Scientific levels
+
+| Level | Meaning in this repository |
+|---|---|
+| Definition | A state, defect, residue, threshold, invariant, or certificate field is explicitly introduced. |
+| Derivation | A result follows from declared definitions and assumptions. |
+| Computational verification | Code and tests confirm behavior for declared fixtures and thresholds. |
+| External observation | Data originate from a separately identified external system or experiment. |
+| Independent validation | Independent evidence supports a broader mechanism or claim within stated uncertainty. |
+
+The current ECL public package contains definitions, derivations, and computational verification. It does not convert a passing software certificate into independent physical, cryptographic, legal, or engineering validation. Computers remain tragically unable to confer truth by printing JSON.
 
 ## Event grammar
 
 ```text
-LOAD Root -> MAP Template -> LINK Context -> RUN Phase -> HALT Seam
-```
-
-The public prototype studies whether a transition can be represented by:
-
-1. a preserved event identity (`Root`),
-2. an allowed transition rule (`Template`),
-3. contextual state (`Phase`),
-4. a boundary correction (`Seam`), and
-5. recorded residual memory (`Ledger`).
-
-The model-defined closure ratio is:
-
-```text
-G_UGD = open_residue / raw_residue
+LOAD Root -> MAP Template -> LINK Context -> RUN Phase -> AUDIT Closure -> COMMIT/HOLD/REJECT
 ```
 
 ## Quick start
@@ -44,43 +50,50 @@ python -m pip install -e .
 python -m unittest discover -s tests -v
 ```
 
-Run the native-ledger simulation:
+Run the advanced closure audit:
+
+```bash
+ecl-closure-audit --fixture bounded --output outputs/closure-certificate.json
+```
+
+Adversarial fixtures return a nonzero exit code:
+
+```bash
+ecl-closure-audit --fixture rupture
+ecl-closure-audit --fixture orientation
+```
+
+Run the existing public prototypes:
 
 ```bash
 ecl-native-ledger --events 512 --seed 117 --out-dir outputs/native-ledger
-```
-
-Run the PRTP certificate demo:
-
-```bash
 ecl-prtp-demo --output outputs/prtp-demo.json
 ```
-
-The commands write machine-readable JSON and CSV artifacts with SHA-256 certificate hashes derived from canonical JSON payloads.
 
 ## Repository layout
 
 ```text
-src/ecl/                 Core public implementation
-examples/                Minimal runnable examples
-tests/                   Reproducibility and policy tests
-docs/ARCHITECTURE.md     Model and data-flow description
-docs/PUBLIC_RELEASE_SCOPE.md
-.github/workflows/ci.yml Python validation workflow
+src/ecl/closure_engine.py              Advanced closure-before-commit engine
+src/ecl/native_ledger.py               Deterministic residue-ledger experiment
+src/ecl/prtp.py                        Root-Template-Phase certificate prototype
+tests/                                 Positive, boundary, and adversarial tests
+schemas/ecl-closure-certificate-v1.schema.json
+docs/CLOSURE_ENGINE.md                 Metrics and classification rule
+docs/ARCHITECTURE.md                   Public model architecture
+PUBLIC_RELEASE_BOUNDARY.md             Included and excluded publication layers
+PATENT_NOTICE.md                       Patent-rights boundary
+RELEASE_CHECKLIST.md                   Pre-public gates
 ```
 
 ## Reproducibility
 
-The native-ledger experiment uses a fixed pseudorandom seed by default. Identical code, configuration, and Python behavior should produce identical report content and certificate hashes. Generated output folders are intentionally ignored by Git.
+Certificates use SHA-256 over compact, sorted JSON. Identical samples, thresholds, and software versions produce identical certificate hashes. Each result should be cited by immutable release tag or exact commit.
 
-## Security and interpretation
+## Publication author
 
-This repository is not a replacement for audited cryptographic libraries, digital-signature infrastructure, official filing receipts, or legal advice. See `SECURITY.md` and `docs/ARCHITECTURE.md` before adapting it to another system.
+Monty Dabas, Independent Researcher  
+ORCID: 0009-0005-6948-209X
 
-## Citation
+## Citation and licence
 
-Citation metadata is provided in `CITATION.cff`.
-
-## License
-
-Copyright © 2026 Parveen. All rights reserved. Public visibility does not grant an open-source or patent license. See `LICENSE`.
+Citation metadata is provided in `CITATION.cff`. The controlled public-inspection terms are in `LICENSE`.
