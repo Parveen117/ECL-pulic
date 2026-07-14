@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ecl-closure-framework"
-version = "0.2.0"
-description = "Advanced public research framework for closure-aware event certification and residue-aware ledgers"
+version = "1.0.0"
+description = "Public research framework for closure-aware event certification and residue-aware ledgers"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{name = "Monty Dabas"}]
