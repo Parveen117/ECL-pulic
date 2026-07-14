@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.venv/
+venv/
+.env
+.env.*
+outputs/
+ecl_native_ledger_v2_pack/
+ECL_PRTP_EVENT_CERTIFICATE_V1.json
+.DS_Store
+Thumbs.db

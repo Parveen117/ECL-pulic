@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this software using the metadata below."
+title: "ECL: Public Research Preview"
+type: software
+authors:
+  - family-names: "Parveen"
+version: 0.1.0
+date-released: 2026-07-15
+repository-code: "https://github.com/Parveen117/ECL-pulic"
+abstract: >-
+  A source-available research prototype for deterministic event certification,
+  recognized-transition experiments, and residue-aware ledger certificates.
+keywords:
+  - event certification
+  - reproducibility
+  - ledger
+  - transition systems
+  - research software

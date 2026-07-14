@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecl-research-preview"
+version = "0.1.0"
+description = "Public research preview for deterministic event certification and residue-aware ledger prototypes"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Parveen"}]
+dependencies = []
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.scripts]
+ecl-native-ledger = "ecl.native_ledger:main"
+ecl-prtp-demo = "ecl.prtp:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
