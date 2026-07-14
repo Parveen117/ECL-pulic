@@ -10,8 +10,14 @@ dist/
 venv/
 .env
 .env.*
+*.pem
+*.key
+*.token
+local_config.*
 outputs/
 ecl_native_ledger_v2_pack/
 ECL_PRTP_EVENT_CERTIFICATE_V1.json
+.ipynb_checkpoints/
+*.ipynb
 .DS_Store
 Thumbs.db
