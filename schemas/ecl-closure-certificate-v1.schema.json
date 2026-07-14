@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Parveen117/ECL-public/schemas/ecl-closure-certificate-v1.schema.json",
+  "title": "ECL Advanced Closure Certificate",
+  "type": "object",
+  "required": [
+    "object",
+    "version",
+    "rule",
+    "sample_digest",
+    "thresholds",
+    "metrics",
+    "component_pass",
+    "classification",
+    "closure_before_commit",
+    "limitations",
+    "certificate_hash"
+  ],
+  "properties": {
+    "object": {"const": "ECL Advanced Closure Certificate"},
+    "version": {"type": "string"},
+    "rule": {"const": "closure-before-commit"},
+    "sample_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "thresholds": {"type": "object"},
+    "metrics": {"type": "object"},
+    "component_pass": {"type": "object"},
+    "classification": {"enum": ["COMMIT", "HOLD", "REJECT"]},
+    "closure_before_commit": {"type": "boolean"},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "certificate_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}
