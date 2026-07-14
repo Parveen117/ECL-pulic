@@ -1,22 +1,75 @@
-ECL PUBLIC RESEARCH PREVIEW LICENSE NOTICE
+ECL CONTROLLED PUBLIC INSPECTION LICENSE
+Version 1.0, 2026
 
-Copyright (c) 2026 Parveen. All rights reserved.
+Copyright © 2026 Monty Dabas. All rights reserved.
 
-The contents of this repository are made publicly viewable for research review,
-verification, and citation. No permission is granted to copy, modify, distribute,
-sublicense, sell, deploy, commercialize, or create derivative works from the
-contents, except where such permission is required by applicable law or is
-provided in prior written authorization by the copyright holder.
+1. PURPOSE
 
-No patent license, trademark license, warranty, representation of fitness, or
-endorsement is granted by publication of this repository.
+This repository is made publicly visible for technical inspection,
+reproducibility review, scholarly discussion, and citation. It is not released
+under an open-source, commercial source-available, patent, or permissive
+software licence.
 
-THE CONTENTS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR
-A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY, OR FITNESS FOR A PARTICULAR
-USE. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COPYRIGHT HOLDER SHALL NOT BE
-LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM THE CONTENTS OR
-THEIR USE.
+2. PERMITTED USE
 
-For permissions beyond public review and citation, obtain written authorization
-from the copyright holder.
+You may:
+
+(a) view and inspect the repository materials;
+(b) download a copy for personal, non-commercial evaluation;
+(c) run the included demonstration and verification code for personal,
+    non-commercial evaluation; and
+(d) cite the repository using the supplied citation metadata and the exact
+    release tag or commit used.
+
+3. PROHIBITED USE
+
+Without prior written permission from the rights holder, you may not:
+
+(a) copy or redistribute substantial portions of the repository;
+(b) modify, adapt, translate, republish, or create derivative works;
+(c) use the repository or its outputs for commercial, production, consulting,
+    training, hosted-service, competitive, device-development, or fabrication
+    purposes;
+(d) sublicense, sell, rent, lease, or transfer rights in the repository;
+(e) incorporate the repository into another software, dataset, model, device,
+    service, protocol, or product;
+(f) remove or alter authorship, copyright, patent, citation, provenance,
+    certificate, or release-boundary notices; or
+(g) use the repository to practise any patented or patent-pending method,
+    system, process, apparatus, architecture, interface, control method,
+    certification method, or claim.
+
+4. PATENT RIGHTS
+
+No patent licence is granted. Publication, inspection, citation, demonstration
+execution, or access to the repository does not grant, imply, waive, exhaust,
+or dedicate any patent right.
+
+5. THIRD-PARTY SOFTWARE AND DATA
+
+Third-party software, services, hardware, and data remain subject to their own
+licences, terms, access rules, and charges. This licence grants no right in any
+third-party software, service, hardware, trademark, or data.
+
+6. NO WARRANTY
+
+THE REPOSITORY IS PROVIDED "AS IS" FOR RESEARCH INSPECTION. TO THE MAXIMUM
+EXTENT PERMITTED BY LAW, THE RIGHTS HOLDER DISCLAIMS ALL WARRANTIES, EXPRESS OR
+IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY,
+NON-INFRINGEMENT, SCIENTIFIC VALIDITY, SECURITY, AND FITNESS FOR ENGINEERING,
+MEDICAL, SAFETY-CRITICAL, FINANCIAL, COMMERCIAL, OR PRODUCTION USE.
+
+7. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE RIGHTS HOLDER SHALL NOT BE LIABLE FOR
+ANY CLAIM, LOSS, DAMAGE, COST, OR LIABILITY ARISING FROM ACCESS TO, USE OF,
+RELIANCE ON, OR INABILITY TO USE THE REPOSITORY OR ITS OUTPUTS.
+
+8. SEPARATE PERMISSION
+
+Any use outside Section 2 requires a separate written licence or permission
+from the applicable rights holder.
+
+9. RESERVATION OF RIGHTS
+
+All rights not expressly granted in this licence are reserved.
