@@ -6,7 +6,7 @@ authors:
   - family-names: "Parveen"
 version: 0.1.0
 date-released: 2026-07-15
-repository-code: "https://github.com/Parveen117/ECL-pulic"
+repository-code: "https://github.com/Parveen117/ECL-public"
 abstract: >-
   A source-available research prototype for deterministic event certification,
   recognized-transition experiments, and residue-aware ledger certificates.
