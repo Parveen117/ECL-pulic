@@ -1,18 +1,27 @@
 cff-version: 1.2.0
-message: "Please cite this software using the metadata below."
-title: "ECL: Public Research Preview"
+message: "If you use or discuss this software, cite the exact release tag or commit."
+title: "ECL: Closure-Aware Event Certification Framework"
 type: software
+version: "0.2.0-rc1"
 authors:
-  - family-names: "Parveen"
-version: 0.1.0
-date-released: 2026-07-15
-repository-code: "https://github.com/Parveen117/ECL-public"
+  - family-names: "Dabas"
+    given-names: "Monty"
+    orcid: "https://orcid.org/0009-0005-6948-209X"
+    affiliation: "Independent Researcher"
 abstract: >-
-  A source-available research prototype for deterministic event certification,
-  recognized-transition experiments, and residue-aware ledger certificates.
+  An advanced bounded public research package for deterministic closure-aware
+  event certification, seam-rupture analysis, phase-lock measurement, winding
+  and orientation consistency, residue-aware ledgers, explicit thresholds, and
+  machine-readable certificates. Passing repository tests does not by itself
+  establish a universal mathematical law, physical mechanism, cryptographic
+  security, legal priority, or production readiness.
 keywords:
   - event certification
-  - reproducibility
-  - ledger
-  - transition systems
-  - research software
+  - closure audit
+  - seam rupture
+  - phase locking
+  - winding number
+  - reproducible research
+  - research certificates
+repository-code: "https://github.com/Parveen117/ECL-public"
+url: "https://github.com/Parveen117/ECL-public"
