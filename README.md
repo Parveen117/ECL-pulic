@@ -1,5 +1,8 @@
 # ECL: Closure-Aware Event Certification Framework
 
+> **Research record:** [Dated snapshot, content hashes and archive links](RESEARCH_PROVENANCE.md) · [Canonical repository governance](GOVERNANCE.md). Cite the exact version used.
+
+
 > **Release status:** version 1.0.0 public-interface release candidate. Keep the repository private until the release checklist, GitHub Actions matrix, and final legal/IP review are complete.
 >
 > **Rights boundary:** public visibility is intended for technical inspection, non-commercial evaluation, scholarly discussion, and citation. It grants no patent licence or unrestricted software rights. See `LICENSE`, `PATENT_NOTICE.md`, and `PUBLIC_RELEASE_BOUNDARY.md`.

@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "repository": "Parveen117/ECL-pulic",
+  "recorded_at_utc": "2026-10-26T14:24:22.218045+00:00",
+  "scope": "Default-branch content immediately before the 2026-10-26 provenance update.",
+  "baseline_branch": "main",
+  "baseline_commit": "421742b8135f0245b612e1a57e0e6b3d5dc79d9a",
+  "baseline_tree": "111d89a150d6209a5555687f0ef2497a88ec9b47",
+  "baseline_commit_url": "https://github.com/Parveen117/ECL-pulic/commit/421742b8135f0245b612e1a57e0e6b3d5dc79d9a",
+  "git_object_hash_algorithm": "sha1",
+  "content_hash_algorithm": "sha256",
+  "limits": [
+    "Git timestamps are metadata, not independent trusted timestamps.",
+    "This manifest excludes its own later provenance update.",
+    "A prior DOI covers its archived version, not later commits.",
+    "Hashes establish content identity, not scientific validity, authorship adjudication, or legal priority."
+  ],
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "b8b6ae8180daf1e926c619c1324b44aaf8fb33b1",
+      "size_bytes": 5999,
+      "sha256": "901ad5bcf60966f829e1a3cce708551ba931c0b2fb3e45747aa29401a05dff2e"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "fcd4767a64558137bfc05166b0b6a2193526533a",
+      "size_bytes": 261,
+      "sha256": "da46f0914c0ff29a011ee817b289479cc2990ed1be7f1653d681d4ec17cf39ce"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "78b7cc12e90a758981a8059eb6e9d779f96c39b2",
+      "size_bytes": 1518,
+      "sha256": "3c3a2f5390e25ac8412d8e61a37805ab78726896a4fc7c288ec6460caf45bade"
+    },
+    {
+      "path": "CITATION.cff",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "70a37928e1c401fb3d4fdadccdc70091403ffa6b",
+      "size_bytes": 1157,
+      "sha256": "d7b1ac464e6d129b3e56d78748cde1fc7d69d7ac81fd9cd734a6be70b218ce47"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "5292c39298148de2f2802a3cd3ed5f92b0223aa1",
+      "size_bytes": 813,
+      "sha256": "3a2308fbc14998ebacd1c8ba103d673156046655ecc7ebf89862d0bca36ec5a3"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "657fc4dc90aa9fe168f8c2c561e1d88b8451cb9e",
+      "size_bytes": 2934,
+      "sha256": "d1cca22eb71003889708b31fd14dc90960f8e12db1a8a7c9024ed534df1eda70"
+    },
+    {
+      "path": "PATENT_NOTICE.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "36f9945503d101b14063488b5b4bd46531d0ef82",
+      "size_bytes": 1273,
+      "sha256": "3736d8079e2f0d43a41f0c8029d54cfcd543079afbacae0fbeaff1ddb662bd1b"
+    },
+    {
+      "path": "PUBLIC_RELEASE_BOUNDARY.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "d3b4adc918394c1ae6abf9b0e7223845a4b55ed1",
+      "size_bytes": 2407,
+      "sha256": "45f913daaa9ea1fe96ea9b57096952df94fbf2fb727b459de9e095d83cfc9f6b"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "77f32d3deabbf56077fdafdf3100e26baf1d2175",
+      "size_bytes": 4862,
+      "sha256": "6d96b5d981438801dc31d90b212a99bd469c27859646692ce9e79fe8845d98f5"
+    },
+    {
+      "path": "RELEASE_CHECKLIST.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "6735f4a53b915ac4a48b692ffff367d6daec1a8b",
+      "size_bytes": 2294,
+      "sha256": "3228db9a243416645400506c4f9afe344cd012af5374522de25875b0144456ee"
+    },
+    {
+      "path": "RELEASE_NOTES_v1.0.0.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "9c047c2b1265b58c3f20f06c2c85ee624ede5c0d",
+      "size_bytes": 2651,
+      "sha256": "65e85c79b409de97f883fb8bde2df405c415dcbf981ac3e52af528ba1694505e"
+    },
+    {
+      "path": "SECURITY.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "282e57f4f2010a5d0a4efc90e505c79c31eec654",
+      "size_bytes": 838,
+      "sha256": "097f6f41f2984fdaac191b0a11c0abb08ed5f464e5f9b4a4a9984068d614ca23"
+    },
+    {
+      "path": "TRANSFER_MANIFEST.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "7f5e6be0e10bb67bbdcb528a63d241a15b72e52a",
+      "size_bytes": 1456,
+      "sha256": "37afb60fb0a49ba3bfde0903ecf07553889f997a6b25280f25e39af85a18c321"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "21a0500d7e5424a5a73465d7f5f199779cdd6f23",
+      "size_bytes": 2531,
+      "sha256": "fba93986d5b78a698d8fde596ba22384ffd325efb33a32b6263832a266701a1c"
+    },
+    {
+      "path": "docs/CLAIM_SCOPE.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "1e9b9cca425ef1adfae4ed0b2a20b67b9ebfc137",
+      "size_bytes": 2161,
+      "sha256": "90b9ce239e191b1d513e5077cce010b1e76d23e78559c02fea24390623e16c33"
+    },
+    {
+      "path": "docs/CLOSURE_ENGINE.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "41b9c1781576454147855c384acadb4c4fb9cf7f",
+      "size_bytes": 2191,
+      "sha256": "690e9f37ba5974afcb89990f2a4e32a5aa4e306ceeb25e737279ac13b3649b14"
+    },
+    {
+      "path": "docs/PUBLIC_RELEASE_SCOPE.md",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "fed1a1df894e1e154a40310a904d80d8d874cb04",
+      "size_bytes": 527,
+      "sha256": "47015eac7c152d9418c897fa75c34ed36aa70f2d1e999b066855c0b9229a8b28"
+    },
+    {
+      "path": "examples/run_closure_audit.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "c87c180fb005bc40501bcd0bb47d7e10054c5d3d",
+      "size_bytes": 244,
+      "sha256": "9924792d884ce5c7f48bf17bc45ae7d56ada34140f4cafb7a75fca454a47a6ab"
+    },
+    {
+      "path": "examples/run_native_ledger.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "dc6727703ca46d658f3d995842f1f8b11d0055c0",
+      "size_bytes": 279,
+      "sha256": "d0cfe5793d980fccd54376c42e1b4f5fec06d4fa2ffda81ff1891d1bc428c768"
+    },
+    {
+      "path": "examples/run_prtp_demo.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "305cf2dad4087cf5d9b691413535648629843fa7",
+      "size_bytes": 171,
+      "sha256": "2f3c97c7fa3051c82a5b7c69f5256afc71cade8bbd73011592fb6c1941a5cc0d"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "e4934e5f6741f2a9a4f5f3825ff855343f0f3a09",
+      "size_bytes": 859,
+      "sha256": "c3659e12ada450c8a8ba6d70246e17d9d705dd6920c0bbc7091da0641559a6c7"
+    },
+    {
+      "path": "schemas/ecl-closure-certificate-v1.schema.json",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "d60d328788239e8dc84cf6a01822950ef6e0613d",
+      "size_bytes": 1098,
+      "sha256": "b2b0d57f8196d79a721afe4f2a2126831aeb1ba6a6341d0bfe908bf8d0637e2c"
+    },
+    {
+      "path": "src/ecl/__init__.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "bcdc4bbd857814310e2e94d2979c80409b6c6f00",
+      "size_bytes": 886,
+      "sha256": "e07942b56511827dc6f56180a7dc2bf1ae1fe31cd7ea25e73c84e1d0de2632f4"
+    },
+    {
+      "path": "src/ecl/closure_engine.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "fd909bad2bb9e90e78af015e2351e252c16ae875",
+      "size_bytes": 15079,
+      "sha256": "c96b6b11d3faf550b3116e971ca88a93d1196c8030978d980a802327b33d88b9"
+    },
+    {
+      "path": "src/ecl/native_ledger.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "af8b2281d1283335e97115b763a43a3459b69a9f",
+      "size_bytes": 8476,
+      "sha256": "eaa97bd918ac7d25a57e04109dc8a1a1def6e25b8bedc6a09b2ba8c64420d9a8"
+    },
+    {
+      "path": "src/ecl/prtp.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "1054629b530fc8c9eb543a5968f0a195e2daa5a8",
+      "size_bytes": 6849,
+      "sha256": "a9ae3c3ba238bd6a8646b8397f7e1fbccb0271992b191a66900fad916f1a3bc3"
+    },
+    {
+      "path": "tests/test_closure_engine.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "c56a6a5a47148dbfc978be7ffcb38f507bb2d95f",
+      "size_bytes": 2935,
+      "sha256": "5071503f82f6d703671fbe549f00ab638dcdec4ec4fdb01fe67d983ef139e2f3"
+    },
+    {
+      "path": "tests/test_native_ledger.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "0fb45ef359063743259938857debc17b6eadf46c",
+      "size_bytes": 1460,
+      "sha256": "acb56f0de7e14318fcd167b88065836ad51c3a1e4c3b2545c4b0f229689c6ff0"
+    },
+    {
+      "path": "tests/test_prtp.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "ea3bd55bc5ab82fcf8cfa59dfba06dc5fa55743c",
+      "size_bytes": 1569,
+      "sha256": "4ade3d2a52c4acf23cc0d4f30b1221c319db7578d13ab50e4e848b08209ce660"
+    },
+    {
+      "path": "tools/verify_public_release.py",
+      "mode": "100644",
+      "git_object_type": "blob",
+      "git_object_sha1": "47601b562f0074123dd1c5dfbb006fcee2f3fcd0",
+      "size_bytes": 3395,
+      "sha256": "f5403501ebea46c43bbb1e27a0435a4db6de628266ccd2f4fb3abb7baa966cc6"
+    }
+  ],
+  "published_releases": [
+    {
+      "tag": "v1.0.0",
+      "published_at": "2026-07-14T20:10:27Z",
+      "url": "https://github.com/Parveen117/ECL-pulic/releases/tag/v1.0.0",
+      "immutable": false,
+      "tag_object": {
+        "sha": "421742b8135f0245b612e1a57e0e6b3d5dc79d9a",
+        "type": "commit",
+        "url": "https://api.github.com/repos/Parveen117/ECL-pulic/git/commits/421742b8135f0245b612e1a57e0e6b3d5dc79d9a"
+      }
+    }
+  ],
+  "zenodo_archive": {
+    "repository": "Parveen117/ECL-pulic",
+    "record_id": 21364277,
+    "doi": "10.5281/zenodo.21364277",
+    "concept_doi": "10.5281/zenodo.21364276",
+    "version": "v1.0.0",
+    "record_created_at": "2026-07-14T20:10:31.654164+00:00",
+    "record_modified_at": "2026-07-14T20:29:52.956030+00:00",
+    "metadata_license": null,
+    "record_url": "https://zenodo.org/records/21364277",
+    "metadata_url": "https://zenodo.org/api/records/21364277",
+    "archive_files": [
+      {
+        "filename": "Parveen117/ECL-pulic-v1.0.0.zip",
+        "size_bytes": 37475,
+        "download_url": "https://zenodo.org/api/records/21364277/files/Parveen117/ECL-pulic-v1.0.0.zip/content",
+        "zenodo_checksum": "md5:5aafc7a4a24fc9d1c3d32f47869f1dee",
+        "sha256": "f1c2aa45557303bc93244e2b875400a5032282494828139c23df8acfae3419d0",
+        "git_blob_comparison": {
+          "matched": true,
+          "files_checked": 30,
+          "missing": [],
+          "extra": [],
+          "changed": []
+        }
+      }
+    ],
+    "verification_time": "2026-10-26T14:21:05.399365+00:00",
+    "release_commit": "421742b8135f0245b612e1a57e0e6b3d5dc79d9a",
+    "status": "verified"
+  }
+}
